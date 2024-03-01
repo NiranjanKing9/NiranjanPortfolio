@@ -3,9 +3,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Baloo Bhai 2","poppins", "sans-serif";
+    color: white;
 }
 body{
-    background: rgb(34,34,42);
+    background: linear-gradient(to bottom, rgba(28, 28, 34, 0.819), rgb(2, 0, 7));
 }
 .main{
     background-image: url(images/back.jpg);
@@ -14,21 +15,12 @@ body{
     width: 100vw;
     height: auto;
 }
-/* img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-} */
 .menu{
     margin: 15px 10px;
     margin-left: 2rem;
     
     color: aliceblue;
    
-}
-.ma:hover{
-    /* box-shadow: aqua  2px 1px 11px 4px; */
 }
 .self{
     width: 5rem;
@@ -74,7 +66,36 @@ body{
 .nav-flex a:hover{
     color: white;
     /* box-shadow: aqua  2px 1px 11px 4px; */
-    text-shadow: rgb(231, 123, 40) 0px 0px 7px
+    text-shadow: rgb(231, 123, 40) 0px 0px 7px;
+}
+.nav-flex li:hover{
+    transform: scale(1.2);
+    transform-origin: bottom;
+}
+.sun{
+    position: relative;
+    width: 12rem;
+    
+    left: 7rem;
+    filter: blur(3px);
+    bottom: 17rem;
+    border-radius: 50%;
+    animation: sunimg 3s linear infinite;
+    transition-property: scale;
+    transition-timing-function: linear;
+}
+.sun:hover{
+    transform: scale(2);
+    transition-duration: 3s;
+    transition-delay: 0.5s;
+}
+@keyframes sunimg {
+    0% , 100%{
+
+    }
+    50%{
+        transform: translate(1.8rem);
+    }
 }
 .hero{
     color: aliceblue;
@@ -82,6 +103,7 @@ body{
     height: 100vh;
     text-align: center;
     margin-top: 30vh;
+    z-index: 10;
 }
 .hero div:first-child{
     font-family: "poppins";
@@ -90,6 +112,8 @@ body{
 }
 .hero div:last-child{
     font-size: 1.8rem;
+    position: relative;
+    bottom: 12rem;
 }
 /* expertise */
 section{
@@ -115,15 +139,43 @@ section{
     flex-direction: column;
     /* font-size: 1rem; */
     width: 25rem;
+    font-weight: 900;
     border: 2px solid white;
     padding: 30px;
+}
+.f div:nth-of-type(odd){
+    height: 50%;
+    /* margin: auto; */
 }
 .f h3{
     font-size: 1.2rem;
     padding: 13px 3px;
     font-family: "sans-serif";
 }
-
+footer{
+    height: 60vh;
+    margin-left: 40vw;
+    font-size: 1.3rem;
+    line-height: 250%;
+}
+footer h1{
+    font-size: 3rem;
+    margin: auto;
+    padding: 30px 0;
+}
+footer a{
+    text-decoration: none;
+}
+footer a:hover{
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: rgba(146, 143, 143, 0.272);
+    text-shadow: rgb(98, 173, 175) 0px 0px 7px;
+    transform: scale(1.2);
+    transform-origin: bottom;
+}
 @media screen and (max-width:650px){
     :root{
         font-size: 0.5rem;
@@ -131,6 +183,9 @@ section{
     .menu{
         margin-top: 3rem;
         margin-left: 3rem;
+    }
+    body{
+        background: linear-gradient(to bottom, rgba(28, 28, 34, 0.863), rgb(2, 0, 7));
     }
     .self{
         width: 8rem;
@@ -152,8 +207,17 @@ section{
         column-gap: 5vw;
         display: none;
     }
+    .sun{
+        bottom: 29rem;
+        left: 10rem;
+        animation-duration: 2.8s;
+    }
     .hero{
-        margin-top: 35%;
+        margin-top: 45%;
+    }
+    .hero div:last-child{
+        font-size: 3em;
+        margin-top: 26px;
     }
     /* expert */
     .expe-flex{
@@ -161,5 +225,9 @@ section{
         flex-direction: column;
         align-items: center;
         font-size: 2rem;
+    }
+    footer{
+        margin-left: 22vw;
+        height: 40vh;
     }
 }
